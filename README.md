@@ -5,6 +5,9 @@ internship project. PhishShield AI runs **14 weighted heuristic checks** on
 any URL — entirely in the browser — and returns a 0–100 risk score with a
 plain-language explanation of every check that passed or failed.
 
+## Live Demo
+https://phishshield-url-detector.onrender.com/
+
 ## ✨ Features
 
 - **4 pages**: Home, About, How It Works, and the Scanner tool
