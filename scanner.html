@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scanner — PhishShield AI</title>
+  <meta name="description" content="Scan a URL for phishing red flags. PhishShield AI runs 14 heuristic checks locally in your browser and explains every result." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 20 5.5 V11 C20 16.5 16.5 20.5 12 22 7.5 20.5 4 16.5 4 11 V5.5 Z"/>
+        </svg>
+      </span>
+      PhishShield AI
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="how.html">How It Works</a>
+      <a href="scanner.html" class="nav-cta">Open Scanner</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main class="scanner-shell">
+    <div class="scanner-card">
+      <span class="eyebrow" style="display:flex; justify-content:center; margin-bottom: 14px;">14-point URL analysis</span>
+      <h1>URL Security Scanner</h1>
+      <p class="lead">Paste a link below. Everything runs locally — nothing is sent to a server.</p>
+
+      <form id="scan-form" class="scan-form" novalidate>
+        <label for="url-input" class="sr-only" style="position:absolute; left:-9999px;">Website URL</label>
+        <input
+          type="text"
+          id="url-input"
+          name="url"
+          placeholder="Enter a website URL, e.g. https://example.com"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button type="submit" class="btn btn-primary" id="scan-submit">Scan Website</button>
+      </form>
+      <div class="scan-form-error" id="scan-error" role="alert"></div>
+
+      <div class="result" id="result" hidden>
+        <div class="result-status">
+          <span class="pill" id="result-pill">
+            <span id="result-icon"></span>
+            <span id="result-label"></span>
+          </span>
+        </div>
+        <div class="result-target" id="result-target"></div>
+
+        <div class="result-gauge-track">
+          <div class="result-gauge-fill" id="gauge-fill"></div>
+        </div>
+        <div class="result-score-label" id="score-label"></div>
+
+        <p id="verdict-description" style="color: var(--text-dim); font-size: 14.5px; margin-bottom: 24px;"></p>
+
+        <div class="report-grid">
+          <div class="report-col">
+            <h4>Flagged Issues</h4>
+            <ul id="flagged-list"></ul>
+          </div>
+          <div class="report-col">
+            <h4>Checks Passed</h4>
+            <ul id="passed-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="history">
+        <div class="history-head">
+          <h4>Recent Scans</h4>
+          <button type="button" class="history-clear" id="clear-history">Clear</button>
+        </div>
+        <ul class="history-list" id="history-list"></ul>
+        <p class="history-empty" id="history-empty">No scans yet — your recent results will appear here.</p>
+      </div>
+
+      <p class="scanner-disclaimer">
+        PhishShield AI uses rule-based heuristics for educational purposes.
+        A "Likely Safe" result is not a guarantee — always verify sensitive
+        links through official channels.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 20 5.5 V11 C20 16.5 16.5 20.5 12 22 7.5 20.5 4 16.5 4 11 V5.5 Z"/>
+          </svg>
+        </span>
+        PhishShield AI
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="how.html">How It Works</a>
+        <a href="scanner.html">Scanner</a>
+      </div>
+
+      <p class="footer-note">
+        © <span class="js-year"></span> PhishShield AI — a cybersecurity internship project.
+        Results are based on heuristic rules and are intended for educational use,
+        not as a sole source of security decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/scanner.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — PhishShield AI</title>
+  <meta name="description" content="Learn what PhishShield AI is, how its rule-based phishing detection works, and the context behind this cybersecurity internship project." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 20 5.5 V11 C20 16.5 16.5 20.5 12 22 7.5 20.5 4 16.5 4 11 V5.5 Z"/>
+        </svg>
+      </span>
+      PhishShield AI
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="how.html">How It Works</a>
+      <a href="scanner.html" class="nav-cta">Open Scanner</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main class="page">
+    <div class="content-block">
+      <span class="eyebrow">About this project</span>
+      <h1 style="margin-top:14px;">About PhishShield AI</h1>
+      <p>
+        PhishShield AI is a lightweight, browser-based tool that helps people
+        spot the warning signs of a phishing link before they click it.
+        It was built as a cybersecurity internship project with one goal in
+        mind: transparency. Every result comes with a plain-language
+        explanation of exactly which checks passed and which didn't —
+        so a score is never a black box.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>Our mission</h2>
+      <p>
+        Phishing remains one of the most common ways attackers steal
+        credentials, payment details, and access to accounts — and most of
+        it relies on links that look "almost right." Our mission is to make
+        the patterns behind those links visible to everyone, not just
+        security professionals, so people can pause and think before
+        they click.
+      </p>
+    </div>
+
+    <div class="content-block">
+      <h2>How it's built</h2>
+      <p>
+        The scanner runs entirely in your browser using 14 weighted
+        heuristic checks grouped into four categories: domain &amp; hosting,
+        connection security, structure &amp; pattern, and content signals.
+        Each check contributes points toward an overall 0–100 risk score,
+        which maps to one of three verdicts: Likely Safe, Suspicious, or
+        High Risk. The <a href="how.html" style="color: var(--brand); text-decoration: underline;">How It Works</a>
+        page lists every single check.
+      </p>
+
+      <div class="notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p>
+          <strong>Heuristic, not absolute.</strong> PhishShield AI is a
+          rule-based educational tool, not a substitute for enterprise
+          threat intelligence. A low score doesn't guarantee a site is
+          safe, and a high score doesn't guarantee it's malicious — always
+          verify through official channels before entering sensitive
+          information.
+        </p>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h2>Project context</h2>
+      <p>
+        This project was built as part of a cybersecurity internship to
+        demonstrate front-end development, secure coding awareness, and a
+        practical understanding of common phishing techniques such as
+        domain spoofing, look-alike characters, and link shorteners.
+      </p>
+      <div class="tag-row">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript (ES6+)</span>
+        <span class="tag">Client-side only</span>
+        <span class="tag">No external APIs</span>
+        <span class="tag">No data collected</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 20 5.5 V11 C20 16.5 16.5 20.5 12 22 7.5 20.5 4 16.5 4 11 V5.5 Z"/>
+          </svg>
+        </span>
+        PhishShield AI
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="how.html">How It Works</a>
+        <a href="scanner.html">Scanner</a>
+      </div>
+
+      <p class="footer-note">
+        © <span class="js-year"></span> PhishShield AI — a cybersecurity internship project.
+        Results are based on heuristic rules and are intended for educational use,
+        not as a sole source of security decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

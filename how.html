@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How It Works — PhishShield AI</title>
+  <meta name="description" content="A full breakdown of the 14 heuristic checks PhishShield AI runs on every URL, grouped into domain, connection, structure, and content signals." />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 20 5.5 V11 C20 16.5 16.5 20.5 12 22 7.5 20.5 4 16.5 4 11 V5.5 Z"/>
+        </svg>
+      </span>
+      PhishShield AI
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="how.html">How It Works</a>
+      <a href="scanner.html" class="nav-cta">Open Scanner</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <main class="page">
+    <div class="content-block">
+      <span class="eyebrow">The pipeline</span>
+      <h1 style="margin-top:14px;">How PhishShield AI works</h1>
+      <p>
+        From the moment you paste a link to the moment you see a verdict,
+        PhishShield AI follows the same four-step pipeline — entirely inside
+        your browser.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>URL input</h3>
+          <p>
+            You enter a link into the scanner. If you leave off
+            <code>http://</code> or <code>https://</code>, PhishShield AI
+            adds <code>http://</code> automatically so it can be parsed
+            and analyzed.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Local analysis</h3>
+          <p>
+            The URL is broken down into its parts — protocol, hostname,
+            path, query string — and run through 14 independent checks
+            covering domain structure, encryption, link patterns, and
+            page-path keywords.
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Risk scoring</h3>
+          <p>
+            Every check that triggers adds weighted points to a 0–100
+            risk score. Stronger phishing indicators (like a hidden
+            "@" redirect or a spoofed brand name) carry more weight than
+            smaller signals (like a long URL).
+          </p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Plain-language report</h3>
+          <p>
+            The final score maps to a verdict — Likely Safe, Suspicious, or
+            High Risk — and you get a full report showing exactly which
+            checks were flagged and which ones passed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="page" style="padding-top: 0;">
+    <div class="content-block">
+      <h2>What we check, in detail</h2>
+      <p>
+        Every check below is independently testable and weighted. Nothing
+        is hidden — this is the complete list PhishShield AI runs on
+        every scan.
+      </p>
+    </div>
+
+    <div class="check-grid">
+      <div class="check-card">
+        <h4>Domain &amp; Hosting</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Raw IP address used instead of a domain name</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Punycode ("xn--") domains that can disguise look-alike characters</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> A known brand name on a domain that brand doesn't own — including look-alikes like "amaz0n" or "paypa1"</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Top-level domains often used for free/disposable sites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Unusually deep subdomain chains</li>
+        </ul>
+      </div>
+
+      <div class="check-card">
+        <h4>Connection Security</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> A hidden "@" used to disguise the real destination</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Missing HTTPS encryption</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Unusual port numbers in the URL</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Known link-shortening services</li>
+        </ul>
+      </div>
+
+      <div class="check-card">
+        <h4>Structure &amp; Pattern</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Multiple hyphens in the domain name</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Unusually long URLs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Redirect patterns hidden in the URL path</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> An unusual number of digits in the domain</li>
+        </ul>
+      </div>
+
+      <div class="check-card">
+        <h4>Content Signals</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> Words like "login", "verify", "secure" or "update" in the domain, path, or query</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="scale-strip">
+    <div class="scale-card">
+      <div>
+        <h3>Understanding your score</h3>
+        <p>
+          Every triggered check adds points to the score, capped at 100.
+          The total maps directly to one of three verdicts.
+        </p>
+      </div>
+
+      <div>
+        <div class="gauge">
+          <span class="seg-safe"></span>
+          <span class="seg-warn"></span>
+          <span class="seg-danger"></span>
+        </div>
+        <ul class="gauge-legend">
+          <li>
+            <strong><span class="swatch swatch-safe"></span>0–19 · Likely Safe</strong>
+            Few or no checks triggered.
+          </li>
+          <li>
+            <strong><span class="swatch swatch-warn"></span>20–49 · Suspicious</strong>
+            One strong signal or several minor ones.
+          </li>
+          <li>
+            <strong><span class="swatch swatch-danger"></span>50–100 · High Risk</strong>
+            Multiple strong signals together.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" style="padding-top:0;">
+    <div class="cta-card">
+      <h2>Try it on a real link</h2>
+      <p>Run a URL through all 14 checks and see the full report for yourself.</p>
+      <a href="scanner.html" class="btn btn-primary">Open the Scanner →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2 20 5.5 V11 C20 16.5 16.5 20.5 12 22 7.5 20.5 4 16.5 4 11 V5.5 Z"/>
+          </svg>
+        </span>
+        PhishShield AI
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="how.html">How It Works</a>
+        <a href="scanner.html">Scanner</a>
+      </div>
+
+      <p class="footer-note">
+        © <span class="js-year"></span> PhishShield AI — a cybersecurity internship project.
+        Results are based on heuristic rules and are intended for educational use,
+        not as a sole source of security decisions.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
