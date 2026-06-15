@@ -6,7 +6,7 @@ any URL — entirely in the browser — and returns a 0–100 risk score with a
 plain-language explanation of every check that passed or failed.
 
 ## Live Demo
-https://phishshield-url-detector.onrender.com/
+https://phishshield-ai-bay.vercel.app/
 
 ## ✨ Features
 
